@@ -1,183 +1,140 @@
-# 基础知识
+# 常用标签、属性及注意事项 {#常用标签、属性及注意事项}
 
-#### Mac
+&lt;!DOCTYPE html&gt; ： HTML5 的文档类型声明。保证浏览器以比较一致的方式解析文档。
 
-在终端中输入 Python3。
+### 内容和结构标签 {#内容和结构标签}
 
-#### 解释器
+&lt;head&gt;、&lt;body&gt; ： 使文档看起来更清晰。
 
-常见的是 cpython。
+&lt;title&gt; : 作为标签名显示
 
-#### 命令行下执行 .py 文件
+&lt;p&gt;：段落
 
-```
-C:\work>python calc.py
-```
+&lt;img&gt;：图片 alt=""，src=""
 
-#### 在 Mac 下执行 .py 文件
+&lt;input&gt; ： 接收用户输入的微件，type=""
 
-在文件第一行加入如下代码：
+&lt;iframe&gt; ： 用以实现一些集成任务，比如在网页中包含 YouTube 窗口，广告单元和搜索框等。
 
-```
-#!/usr/bin/env python3
+&lt;small&gt; ： 表示“附属细则”，如页面底部没人看的法律条款。
 
-# -*- coding: utf-8 -*-
-```
+### 格式标签 {#格式标签}
 
-每个 Python 文件都应当添加如上两行，第一行告诉 Linux / OS X 系统，该文件是可执行程序，第二行说明该文档采用 utf-8 编码。
+&lt;em&gt; ： 强调（需要重读的文本），斜体显示
 
-然后通过命令行给 .py 文件以执行权限：
+&lt;i&gt;： 需要用斜体显示的文本
 
-```
-$ chmod a+x hello.py
-```
+&lt;strong&gt; ： 强调，加粗显示
 
-最后输入\(文件名前加 ./\)
+&lt;b&gt; : 需要用粗体表示的文本
 
-```
-./xx.py
-```
+&lt;br/&gt; ：换行
 
-#### 在 Windows 下执行 .py 文件
+&lt;hr/&gt; ： 水平线，在两个区块间画一条线
 
-在环境变量PATHEXT中添加一个.PY
+&lt;s&gt; ： 删除的文本
 
-```
-D:\Programming\Python>set PathExt=.PY;%PathExt%
+&lt;a&gt; ：使内部的文本变成蓝色并带有下划线，图像带有蓝色边框
 
-D:\Programming\Python>hello
-Hello,world
-```
+### HTML5 新增的标签 {#html5-新增的标签}
 
-#### 转义符的使用
+#### 用于构建页面的元素（语义元素） {#用于构建页面的元素（语义元素）}
 
-如果字符串内部既包含`'`又包含`"，`可以用转义字符`\`来标识，比如：
+* **不包含默认样式，不需要命名，可以直接在 css 中引用和应用样式。**
 
-```
-'I\'m \"OK\"!'
-```
+&lt;article&gt;：能够独立的内容区块
 
-\n  换行，\t 制表，用`r''`表示`''`内部的字符串默认不转义。
+&lt;aside&gt;：附注，与周围文本没有密切关系的内容。可以用来放广告、相关内容链接。
 
-用 ''' ’'' 包围多行文本，就不必使用 \n 换行。
+&lt;figcaption&gt;：图题，通常和 &lt;img&gt; 元素一起房子 &lt;figure&gt; 元素内。
 
-#### 布尔运算符
+&lt;figure&gt;：插图，虽然独立于文本，但是文本会提到它。它应该是浮动在离相关文本较近的位置。
 
-and, or, not，结果为True & False
+&lt;footer&gt;：放网站版权信息、作品来源、法律限制及支持链接，也可以用于文章中的文脚
 
-#### 空值
+&lt;header&gt;：可以包含HTML标题和其他内容。其他内容可以是标志、作者署名或一组指向后面内容的导航链接
 
-None
+&lt;hgroup&gt;：主要目的是把标题和副标题联系到一起
 
-#### 运算符
+&lt;nav&gt;
 
-使用 / 的计算结果是浮点数：9/3=3.0，使用 // 才是整除：10//3=3。
+&lt;section&gt;
 
-#### 浮点数
+&lt;details&gt;
 
-$$1.23*10^9$$就是`1.23e9`，或者`12.3e8`，0.000012可以写成`1.2e-5。`
+&lt;summary&gt;
 
-#### 变量
+#### 用于识别文本的元素 {#用于识别文本的元素}
 
-把一个变量`a`赋值给另一个变量`b`，这个操作实际上是把变量`b`指向变量`a`所指向的数据。
+&lt;mark&gt;
 
-### 基本类型
+&lt;time&gt;
 
-#### byte
+&lt;wbr&gt;
 
-`bytes`类型的数据用带`b`前缀的单引号或双引号表示：x = b'ABC'。每个字符只占用1个字节。
+#### Web 表单及交互 {#web-表单及交互}
 
-#### str 占位符
-
-| %d | 整数 |
-| :--- | :--- |
-| %f | 浮点数 |
-| %s | 字符串 |
-| %x | 十六进制整数 |
+&lt;input&gt;
 
 ```
-'Hi, %s, you have $%d.' % ('Michael', 1000000)。
+//step 属性会影响到数值框的微调按钮。
+
+<
+input id="age" type="number" min="0" max="120" step="0.1 value="160"/
+>
 ```
 
-```
->>> '%2d-%02d' % (3, 1)
-' 3-01'
->>> '%.2f' % 3.1415926
-'3.14'
-```
+&lt;datalist&gt;
+
+可以在普通文本框中添加下拉建议列表。将 &lt;input&gt; 元素的 list 属性值设置为 &lt;datalist&gt; 的 id。
+
+&lt;keygen&gt;
+
+&lt;meter&gt;
+
+&lt;progress&gt;
+
+&lt;command&gt;
+
+&lt;menu&gt;
+
+&lt;output&gt;
+
+#### 音频、视频及插件 {#音频、视频及插件}
+
+&lt;audio&gt;
+
+&lt;video&gt;
+
+* 有三个常用的属性 controls，metadata，loop
+
+&lt;source&gt;
+
+&lt;embed&gt; ： 向页面中加入插件。
+
+#### Canvas {#canvas}
+
+&lt;canvas&gt;
+
+#### 不支持语义元素的浏览器的处理 {#不支持语义元素的浏览器的处理}
+
+在 CSS 中加入超级规则：
 
 ```
->>> 'growth rate: %d %%' % 7
-'growth rate: 7 %'
-```
-
-### 集合
-
-#### list
-
-list是一种有序的集合，可以随时添加和删除其中的元素。
+article, aside, figure, figcaption, footer, header, hgroup, nav, section,
+summary {
+  display: block;
+}
 
 ```
-classmates = ['Michael', 'Bob', 'Tracy']
-```
 
-用-1做索引，可以取得最后一个元素。
+#### HTML 编辑器 {#html-编辑器}
 
-```
-classmates[-1]：'Tracy’
-```
+##### 使用 contentEditable 编辑元素。 {#使用-contenteditable-编辑元素。}
 
-list 中可以存放不同类型的数据，包括 list 。
+##### 使用 designMode 编辑页面 {#使用-designmode-编辑页面}
 
-可以直接赋值给索引位置： classmates\[1\] = 'Sarah'
-
-#### tuple
-
-tuple一旦初始化就不能修改。
-
-只有1个元素的tuple定义时必须加一个逗号`,`来消除歧义：t = \(1,\)
-
-* 一个可变的tuple：t = \('a', 'b', \['A', 'B'\]\)，可以修改其中 list 的元素。
-
-### 条件判断
-
-#### if x:
-
-只要`x`是非零数值、非空字符串、非空list等，就判断为`True`，否则为`False`。
-
-### 循环
-
-#### for x in ...
-
-#### while
-
-* 少用 break 和 continue，几乎所有 break 和 continue 都可以通过优化逻辑省略。
-
-### dict
-
-使用键-值（key-value）存储，具有极快的查找速度。
-
-```
-d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
-```
-
-* 通过 d\['Bob'\] 可以取到 value 值，还可以通过 d\['Mike'\] = 75 向字典中添加键值对。
-
-* 如果 key 不存在，dict 会报错，取值前应当用 'Thomas' in d 进行判断。
-
-### set
-
-保存不重复的一组数据。创建一个 set ，需要提供一个 list 作为输入集合。
-
-```
-s = set([1, 2, 3]) 输出 {1,2,3}
-```
-
-### 作用域
-
-类似`__xxx__`这样的变量是特殊变量，可以被直接引用，但是有特殊用途。
-
-类似`_xxx`和`__xxx`这样的函数或变量就是非公开的（private），不应该被直接引用。
+* 详见 《HTML5 秘籍》电子书 165 页。
 
 
 

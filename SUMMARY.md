@@ -1,11 +1,12 @@
 # Summary
 
 * [Introduction](README.md)
-* [常用命令行](chapter1.md)
-* [基础知识](ji-chu-zhi-shi.md)
-* [常用 API](chang-yong-api.md)
-* [函数](han-shu.md)
-* [高级特性](gao-ji-te-xing.md)
-* [模块](mo-kuai.md)
-* [面向对象](mian-xiang-dui-xiang.md)
+* [基础知识](chapter1.md)
+* [常用标签、属性及注意事项](ji-chu-zhi-shi.md)
+* [腻子脚本](chang-yong-api.md)
+* [微数据](han-shu.md)
+* [Web 表单](gao-ji-te-xing.md)
+* [CSS 伪类和伪元素](mo-kuai.md)
+* [音频和视频](mian-xiang-dui-xiang.md)
+  * [使用 JavaScript 控制播放器](mian-xiang-dui-xiang/shi-yong-javascript-kong-zhi-bo-fang-qi.md)
 

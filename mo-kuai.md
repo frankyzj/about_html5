@@ -1,4 +1,10 @@
-* `__init__.py`：每一个包目录下面都会有一个`__init__.py`的文件，这个文件是**必须存在**的，否则，Python就把这个目录当成普通目录，而不是一个包。`__init__.py`可以是空文件，也可以有Python代码，因为`__init__.py`本身就是一个模块.
+先看下面两张图表（引自W3School教程）：
+
+![](https://frankyzj.gitbooks.io/html5/content/assets/import.png)
+
+![](https://frankyzj.gitbooks.io/html5/content/assets/import1.png)
+
+从表一可以看出，伪类选择器是通过触发一定的“事件”来实现效果。
 
 
 
